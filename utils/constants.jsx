@@ -57,3 +57,25 @@ export const cards = [
     }
     
 ]
+
+export const testimonies = [
+    {
+        image: '',
+        name: 'Gabriel Ayodele',
+        work: 'Software Developer',
+        testimony: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti.'
+    },
+    {
+        image: '',
+        name: 'Lawal Khodijat',
+        work: 'Software Developer',
+        testimony: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti.'
+    },
+    {
+        image: '',
+        name: 'Abdullahi Olasupo',
+        work: 'Product Designer',
+        testimony: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti.'
+    }
+
+]
