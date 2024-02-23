@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+    font-family: "Bree Serif", serif;
+}
+
+p{
+    @apply font-light
+}
+
+.nav .active{
+    @apply text-secondary
+}
+
+.home{
+    background: url('/images/background.png');
+}
+
+/* .film{
+    background: url('/images/Ruth.JPG');
+} */
