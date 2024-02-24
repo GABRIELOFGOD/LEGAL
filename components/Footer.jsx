@@ -20,8 +20,8 @@ const Footer = () => {
       <hr />
       <div className="flex justify-between mt-3">
         <span>All Right Reserved</span>
-        <div className="flex gap-5">
-          <span>&copy;</span>
+        <div className="flex gap-3">
+          <span className='my-auto'>&copy;</span>
           <p className="font-bold text-xl">SAFERNET</p>
         </div>
       </div>

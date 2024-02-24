@@ -25,6 +25,26 @@ p{
     background-size: cover;
 }
 
+.formaly input,
+.formaly textarea{
+    @apply w-full outline-none border-textSecondary rounded-sm px-6
+}
+
+.formaly input::placeholder,
+.formaly textarea::placeholder{
+    text-transform:  capitalize;
+}
+
+.formaly input{
+    @apply h-10 
+}
+
+.contact{
+    background: url('/images/cover.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* .film{
     background: url('/images/Ruth.JPG');
 } */
