@@ -15,8 +15,8 @@ export const navList = [
         path: 'about'
     },
     {
-        name: 'agender',
-        path: 'agender'
+        name: 'agenda',
+        path: 'agenda'
     },
     {
         name: 'contact',
@@ -42,7 +42,7 @@ export const cards = [
     },
     {
         icon: <TbExplicitOff />,
-        title: 'Fight against blackmailing',
+        title: 'Fight against domestic violence',
         text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti. Eius, quas ab voluptatum expedita in ratione temporibus deserunt cupiditate ipsum ipsam aliquam beatae cumque. Eaque laborum facere nam provident!'
     },
     {
@@ -78,4 +78,22 @@ export const testimonies = [
         testimony: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti.'
     }
 
+]
+
+export const project = [
+    {
+        title: 'Safe Internet Day: 2024',
+        info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti.',
+        image: '/images/Ruth.JPG'
+    },
+    {
+        title: 'Secondary School internet educaion',
+        info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti.',
+        image: '/images/Ruth.JPG'
+    },
+    {
+        title: 'Safe Internet Conference',
+        info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti.',
+        image: '/images/Ruth.JPG'
+    }
 ]

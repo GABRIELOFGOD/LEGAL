@@ -3,6 +3,7 @@ import Practices from '../components/Practices'
 import WhoWeAre from '../components/WhoWeAre'
 import Testimony from '../components/Testimony'
 import ContactUs from '../components/ContactUs'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -11,7 +12,7 @@ const Home = () => {
             <p className="md:text-6xl text-4xl md:w-[753px] text-center capitalize font-bold">Help to reclaim your freedom</p>
             <p className="md:text-[20px] text-center font-light md:w-[553px]">We know how large objects will act, but things on a small scale just do not act that way.</p>
             <div className="flex gap-5">
-                <button className='rounded-[40px] hover:bg-white px-4 whitespace-nowrap hover:text-secondary duration-300 border border-secondary flex justify-center py-3 bg-secondary md:w-[182px]'>Make Report</button>
+                <Link to='report' className='rounded-[40px] hover:bg-white px-4 whitespace-nowrap hover:text-secondary duration-300 border border-secondary flex justify-center py-3 bg-secondary md:w-[182px]'>Make Report</Link>
                 <button className='rounded-[40px] whitespace-nowrap px-4 hover:bg-secondary duration-300 border border-white md:w-[182px] py-3 flex justify-center'>Contact us</button>
             </div>
         </div>

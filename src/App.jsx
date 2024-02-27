@@ -5,7 +5,8 @@ import Loader from '../components/Loader'
 import NotFound from '../pages/NotFound'
 
 // ================= LAZY PAGES ================== //
-const LazyHome = lazy(() => import('../pages/Home'))
+const LazyHome = lazy(() => import('../pages/HomePage'));
+const LazyReport = lazy(() => import('../pages/Report'));
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <Suspense fallback={<Loader />}><LazyHome /></Suspense>
+      },
+      {
+        path: 'report',
+        element: <Suspense fallback={<Loader />}><LazyReport /></Suspense>
       },
       {
         path: '*',

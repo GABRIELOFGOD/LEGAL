@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { navList } from '../utils/constants'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoCloseSharp } from "react-icons/io5";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [navOpen, setNavOpen] = useState(false)
+  const [navOpen, setNavOpen] = useState(false);
+
+  const location = useParams();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+
   }, []);
 
   const closeNav = () => {
