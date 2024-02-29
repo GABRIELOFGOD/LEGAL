@@ -2,6 +2,7 @@ import React from 'react'
 import KnowAbout from '../components/KnowAbout'
 import Practices from '../components/Practices'
 import ProjectDone from '../components/ProjectDone'
+import Join from '../components/Join'
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <KnowAbout />
       <Practices />
       <ProjectDone />
+      <Join />
     </div>
   )
 }

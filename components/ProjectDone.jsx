@@ -14,10 +14,15 @@ const ProjectDone = () => {
                 </div>
             </div>
         </div>
-        <div>
+        <div className='flex md:flex-row flex-col justify-between gap-5 mt-5 md:mt-10'>
             {
                 project?.map((item, i) => (
-                    <ProjectCard key={i} />
+                    <ProjectCard
+                        key={i}
+                        title={item.title}
+                        info={item.info}
+                        image={item.image}
+                    />
                 ))
             }
         </div>

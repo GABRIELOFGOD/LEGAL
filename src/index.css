@@ -57,3 +57,35 @@ p{
     background-size: cover;
     backdrop-filter: blur(20%);
 }
+
+.icon{
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(50px);
+}
+
+.cover::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.internet::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.ting .active{
+    @apply text-secondary font-bold
+}
+

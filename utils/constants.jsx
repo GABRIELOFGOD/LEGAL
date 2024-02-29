@@ -24,6 +24,25 @@ export const navList = [
     }
 ]
 
+export const social = [
+    {
+        name: 'Facebook',
+        path: ''
+    },
+    {
+        name: 'Twitter',
+        path: ''
+    },
+    {
+        name: 'Youtube',
+        path: ''
+    },
+    {
+        name: 'Instagram',
+        path: ''
+    }
+]
+
 export const cards = [
     {
         icon: <AiFillStop />,
@@ -92,7 +111,7 @@ export const project = [
         image: '/images/Ruth.JPG'
     },
     {
-        title: 'Safe Internet Conference',
+        title: 'Fact checker conference',
         info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, corrupti.',
         image: '/images/Ruth.JPG'
     }

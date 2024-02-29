@@ -12,8 +12,9 @@ const Heading = () => {
     }
 
   return (
-    <div className='flex justify-between md:py-4 py-2 px-6 md:px-32 bg-white text-primary shadow-md sticky top-0'>
-        <Link to='/' onClick={closeNav} className='font-extrabold text-primary text-4xl'>SAFERNET(annex)</Link>
+    <div className='flex justify-between md:py-4 py-2 px-6 z-50 md:px-32 bg-white text-primary shadow-md sticky top-0'>
+        <Link to='/' onClick={closeNav} className='font-extrabold text-primary text-4xl'>A</Link>
+        {/* <Link to='/' onClick={closeNav} className='font-extrabold text-primary text-4xl'>SAFERNET(annex)</Link> */}
         <div className={`flex md:flex-row my-auto absolute md:top-0 md:relative duration-500 nav flex-col gap-10 capitalize`}>
         {
           navList?.map((item, i) => (

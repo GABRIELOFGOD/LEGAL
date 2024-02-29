@@ -3,7 +3,7 @@ import React from 'react'
 const KnowAbout = () => {
   return (
     <div className='md:py-20 gap-10 justify-between py-10 md:px-32 px-6 flex md:flex-row flex-col'>
-      <div className='flex gap-3 px-10'>
+      <div className='flex gap-3 md:px-10'>
         <div className='w-[100px] mt-2 bg-black h-[2px]'></div>
         <div className='flex flex-col gap-10'>
           <p className="text-sm uppercase font-bold">Know About us</p>
