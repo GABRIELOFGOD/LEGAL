@@ -13,6 +13,7 @@ const Practices = () => {
         {
           cards?.map((item, i) => (
             <PracticeCard
+            key={i}
               icon={item.icon}
               title={item.title}
               text={item.text}

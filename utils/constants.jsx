@@ -116,3 +116,9 @@ export const project = [
         image: '/images/Ruth.JPG'
     }
 ]
+
+export const ReportPage = ['person abused', 'type of abuse', 'evidence', 'action want']
+
+
+
+

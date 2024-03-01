@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from '../components/Layout'
 import Loader from '../components/Loader'
 import NotFound from '../pages/NotFound'
+import { CreateUserContext } from '../utils/context'
 
 // ================= LAZY PAGES ================== //
 const LazyHome = lazy(() => import('../pages/HomePage'));
@@ -31,7 +32,9 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <RouterProvider router={router} />
+    <CreateUserContext>
+      <RouterProvider router={router} />
+    </CreateUserContext>
   )
 }
 
