@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ReportPage } from '../../utils/constants'
 import { ContextUser } from '../../utils/context'
 
 const EvidencePage = ({activePage, setPage}) => {
-  const { gotEvidence, setGotEvidence, evidence, setEvidence } = ContextUser();
+  const { gotEvidence, setGotEvidence, evidence, setEvidence, evidenceFile, setEvidenceFile } = ContextUser();
+  const [btnDisabled, setBtnDisabled] = useState(true)
+  // const [imageFile, setImageFile] = useState(null)
+  // const [audioFile, setAudioFile] = useState(null)
+  // const [videoFile, setVideoFile] = useState(null)
+  // const [urlFile, setUrlFile] = useState('')
+  // const [otherFile, setOtherFile] = useState('')
+
+  const fileConstance = e => {
+    setEvidenceFile(e.target.files[0])
+  }
+
+  // if(!gotEvidence){
+  //   setBtnDisabled(false)
+  // }
 
   return (
     <div className='flex flex-col items-center gap-5'>
@@ -35,15 +49,15 @@ const EvidencePage = ({activePage, setPage}) => {
             <div className='mt-5'>
               {evidence == 'image' && <div>
                   <p className=" font-semibold">Upload Your Image Evidence</p>
-                  <input type='file' accept='image/*' />
+                  <input onChange={e => fileConstance(e)} type='file' accept='image/*' />
                 </div>}
               {evidence == 'video' && <div>
                   <p className=" font-semibold">Upload Your Video Evidence</p>
-                  <input type='file' accept='video/*' />
+                  <input onChange={e => fileConstance(e)} type='file' accept='video/*' />
                 </div>}
               {evidence == 'audio' && <div>
                   <p className=" font-semibold">Upload Your Audio Evidence</p>
-                  <input type='file' accept='audio/*' />
+                  <input onChange={e => fileConstance(e)} type='file' accept='audio/*' />
                 </div>}
               {evidence == 'url' && <div>
                   <p className=" font-semibold">Enter Your Website Evidence</p>
@@ -59,7 +73,7 @@ const EvidencePage = ({activePage, setPage}) => {
         {/* ============== BUTTON SECTION =================== */}
         <div className="flex gap-5 mt-10 items-center justify-center w-full ">
             {activePage > 1 && <button className='py-2 hover:bg-textSecondary hover:text-black duration-300 px-8 text-white bg-primary rounded-md' onClick={() => setPage(activePage - 1)}>Prev</button>}
-            {activePage < ReportPage.length && <button className='py-2 hover:bg-textSecondary hover:text-black duration-300 px-8 text-white bg-primary rounded-md' onClick={() => setPage(activePage + 1)}>Next</button>}
+            {activePage < ReportPage.length && <button onClick={() => setPage(activePage + 1)} className={`py-2 hover:bg-textSecondary hover:text-black ${btnDisabled ? 'bg-textSecondary hover:text-white' : ' bg-primary'} duration-300 px-8 text-white bg-primary rounded-md`} disabled={btnDisabled}>Next</button>}
         </div>
     </div>
   )

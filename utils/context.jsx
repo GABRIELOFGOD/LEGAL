@@ -12,6 +12,9 @@ export const CreateUserContext = ({children}) => {
     const [victimAge, setVictimAge] = useState(null)
     const [evidence, setEvidence] = useState(null)
 
+    // ===================== STATES FOR EVIDENCE =================== //
+    const [evidenceFile, setEvidenceFile] = useState(null);
+
     const changeVictimAge = e => setVictimAge(e.target.value)
 
     return(
@@ -22,7 +25,8 @@ export const CreateUserContext = ({children}) => {
                 info, setInfo,
                 gotEvidence, setGotEvidence,
                 victimAge, changeVictimAge,
-                evidence, setEvidence
+                evidence, setEvidence,
+                evidenceFile, setEvidenceFile
             }}
         >
             {children}
