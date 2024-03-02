@@ -8,15 +8,21 @@ export const CreateUserContext = ({children}) => {
     const [who, setWho] = useState(null)
     const [type, setType] = useState('non')
     const [info, setInfo] = useState('')
+    const [gotEvidence, setGotEvidence] = useState(false)
+    const [victimAge, setVictimAge] = useState(null)
+    const [evidence, setEvidence] = useState(null)
 
-
+    const changeVictimAge = e => setVictimAge(e.target.value)
 
     return(
         <Context.Provider
             value={{
                 who, setWho,
                 type, setType,
-                info, setInfo
+                info, setInfo,
+                gotEvidence, setGotEvidence,
+                victimAge, changeVictimAge,
+                evidence, setEvidence
             }}
         >
             {children}

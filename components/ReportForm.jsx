@@ -6,6 +6,7 @@ import { ContextUser } from '../utils/context';
 import TypePage from '../pages/formPages/TypePage';
 import EvidencePage from '../pages/formPages/EvidencePage';
 import ActionPage from '../pages/formPages/ActionPage';
+import Welcome from '../pages/formPages/Welcome';
 
 const ReportForm = () => {
     const [activePage, setPage] = useState(1)
@@ -18,7 +19,7 @@ const ReportForm = () => {
     if(activePage > ReportPage.length) setPage(ReportPage.length);
 
   return (
-    <div className='flex flex-col items-center mt-10 justify-center w-full'>
+    <div className='flex flex-col items-center max-w-[700px] mt-10 justify-center w-full'>
         <div className='flex '>
             {
                 ReportPage.map((page, i) => (
@@ -31,9 +32,15 @@ const ReportForm = () => {
                 ))
             }
         </div>
+
         <form className='mt-10 md:mt-20' onSubmit={e => e.preventDefault()}>
+
+            {/* ================ WELCOME SECTION ======================= */}
+            { activePage == 1 && <Welcome
+                activePage={activePage}
+                setPage={setPage}            />}
             {/* ================ FORM SECTION ONE ====================== */}
-            { activePage == 1 && <WhoPage
+            { activePage == 2 && <WhoPage
                 activePage={activePage}
                 btnDisabled1={btnDisabled1}
                 setBtnDisabled1={setBtnDisabled1}
@@ -42,7 +49,7 @@ const ReportForm = () => {
 
             {/* ================ FORM SECTION TWO ====================== */}
             {
-                activePage == 2 && <TypePage
+                activePage == 3 && <TypePage
                     activePage={activePage}
                     setPage={setPage}
                     btnDisabled={btnDisabled2}
@@ -52,7 +59,7 @@ const ReportForm = () => {
 
             {/* ================ FORM SECTION THREE ====================== */}
             {
-                activePage == 3 && <EvidencePage
+                activePage == 4 && <EvidencePage
                     activePage={activePage}
                     setPage={setPage}
                 />
@@ -60,7 +67,7 @@ const ReportForm = () => {
 
             {/* ================ FORM SECTION FOUR ====================== */}
             {
-                activePage == 4 && <ActionPage
+                activePage == 5 && <ActionPage
                     activePage={activePage}
                     setPage={setPage}
                 />

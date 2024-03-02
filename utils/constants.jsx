@@ -117,7 +117,7 @@ export const project = [
     }
 ]
 
-export const ReportPage = ['person abused', 'type of abuse', 'evidence', 'action want']
+export const ReportPage = ['Welcome', 'person abused', 'type of abuse', 'evidence', 'action taken', 'action want']
 
 
 

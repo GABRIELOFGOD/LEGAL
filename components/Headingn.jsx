@@ -18,9 +18,10 @@ const Heading = () => {
         <div className={`flex md:flex-row my-auto absolute md:top-0 bg-white md:relative duration-500 nav flex-col gap-10 capitalize ${navOpen ? 'bg-white top-[55px]  w-full left-0 text-primary py-6' : 'bg-white top-[-500px]'}`}>
         {
           navList?.map((item, i) => (
-            <NavLink onClick={closeNav} className={`no-underline md:px-0 px-6`} to={item.path} key={i}>{item.name}</NavLink>
+            <NavLink onClick={closeNav} className={`no-underline my-auto md:px-0 px-6`} to={item.path} key={i}>{item.name}</NavLink>
           ))
         }
+        <Link to='report' className='w-[145px] text-white duration-300 py-3 rounded-md flex items-center justify-center border text-[14px] font-semibold border-white bg-secondary hover:bg-textSecondary'>Make a report</Link>
       </div>
       <div onClick={() => setNavOpen(!navOpen)} className='my-auto text-2xl flex md:hidden p-2 rounded-md border border-primary hover:text-white hover:bg-primary cursor-pointer duration-300'>{navOpen ? <IoCloseSharp /> : <HiMenuAlt3 />}</div>
     </div>
