@@ -5,13 +5,17 @@ import WhoPage from '../pages/formPages/WhoPage';
 import { ContextUser } from '../utils/context';
 import TypePage from '../pages/formPages/TypePage';
 import EvidencePage from '../pages/formPages/EvidencePage';
-import ActionPage from '../pages/formPages/ActionPage';
+import ActionTakenPage from '../pages/formPages/ActionTakenPage';
 import Welcome from '../pages/formPages/Welcome';
+import ActionWants from '../pages/formPages/ActionWants';
 
 const ReportForm = () => {
     const [activePage, setPage] = useState(1)
     const [btnDisabled1, setBtnDisabled1] = useState(true)
     const [btnDisabled2, setBtnDisabled2] = useState(true)
+    const [btnDisabled3, setBtnDisabled3] = useState(true)
+    const [btnDisabled4, setBtnDisabled4] = useState(false)
+    const [btnDisabled5, setBtnDisabled5] = useState(true)
     
     // ================= FORM VALIDATION ====================== //
     const { setWho } = ContextUser();
@@ -62,14 +66,27 @@ const ReportForm = () => {
                 activePage == 4 && <EvidencePage
                     activePage={activePage}
                     setPage={setPage}
+                    btnDisabled={btnDisabled3}
+                    setBtnDisabled={setBtnDisabled3}
                 />
             }
 
             {/* ================ FORM SECTION FOUR ====================== */}
             {
-                activePage == 5 && <ActionPage
+                activePage == 5 && <ActionTakenPage
                     activePage={activePage}
                     setPage={setPage}
+                    btnDisabled={btnDisabled4}
+                    setBtnDisabled={setBtnDisabled4}
+                />
+            }
+
+            {
+                activePage == 6 && <ActionWants
+                    activePage={activePage}
+                    setPage={setPage}
+                    btnDisabled={btnDisabled5}
+                    setBtnDisabled={setBtnDisabled5}
                 />
             }
 

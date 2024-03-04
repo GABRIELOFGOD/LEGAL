@@ -22,27 +22,27 @@ const TypePage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
         <div className='flex gap-6'>
           <div className='flex gap-2'>
             <label className='font-semibold text-[12px]' htmlFor="12below">12 and below</label>
-            <input onChange={e => changeVictimAge(e)} value='12below' type="radio" id='12below' name='victim-age' />
+            <input checked={victimAge == '12below'} onChange={e => changeVictimAge(e)} value='12below' type="radio" id='12below' name='victim-age' />
           </div>
           
           <div className='flex gap-3'>
             <label className='font-semibold text-[12px]' htmlFor="13-25">13 to 25</label>
-            <input onChange={e => changeVictimAge(e)} value='13-25' type="radio" id='13-25' name='victim-age' />
+            <input checked={victimAge == '13-25'} onChange={e => changeVictimAge(e)} value='13-25' type="radio" id='13-25' name='victim-age' />
           </div>
           
           <div className='flex gap-3'>
             <label className='font-semibold text-[12px]' htmlFor="26-45">26 to 45</label>
-            <input onChange={e => changeVictimAge(e)} value='26-45' type="radio" id='26-45' name='victim-age' />
+            <input checked={victimAge == '26-45'} onChange={e => changeVictimAge(e)} value='26-45' type="radio" id='26-45' name='victim-age' />
           </div>
 
           <div className='flex gap-3'>
             <label className='font-semibold text-[12px]' htmlFor="45-65">45 to 65</label>
-            <input onChange={e => changeVictimAge(e)} value='45-65' type="radio" id='45-65' name='victim-age' />
+            <input checked={victimAge == '45-65'} onChange={e => changeVictimAge(e)} value='45-65' type="radio" id='45-65' name='victim-age' />
           </div>
 
           <div className='flex gap-3'>
             <label className='font-semibold text-[12px]' htmlFor="65above">65 and above</label>
-            <input onChange={e => changeVictimAge(e)} value='65above' type="radio" id='65above' name='victim-age' />
+            <input checked={victimAge == '12below'} onChange={e => changeVictimAge(e)} value='65above' type="radio" id='65above' name='victim-age' />
           </div>
 
           <div className='flex gap-3'>
