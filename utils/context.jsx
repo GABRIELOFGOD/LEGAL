@@ -11,14 +11,23 @@ export const CreateUserContext = ({children}) => {
     const [gotEvidence, setGotEvidence] = useState(false)
     const [victimAge, setVictimAge] = useState(null)
     const [evidence, setEvidence] = useState(null)
+    const [review, setReview] = useState(false)
 
-    const [actionTaken, setTaken] = useState(null)
+    const [actionTaken, setTaken] = useState('non')
     const [actionWant, setWant] = useState(null)
 
     // ===================== STATES FOR EVIDENCE =================== //
     const [evidenceFile, setEvidenceFile] = useState(null);
 
-    const changeVictimAge = e => setVictimAge(e.target.value)
+    const changeVictimAge = e => setVictimAge(e.target.value);
+
+
+    // ======================== API CALLS ======================== //
+    const apicaller = () => {
+        const formData = new FormData();
+        formData.append('who', who)
+        console.log(formData)
+    }
 
     return(
         <Context.Provider
@@ -31,7 +40,11 @@ export const CreateUserContext = ({children}) => {
                 evidence, setEvidence,
                 evidenceFile, setEvidenceFile,
                 actionTaken, setTaken,
-                actionWant, setWant
+                actionWant, setWant,
+                review, setReview,
+
+                // ========= API FUNCTION =========== //
+                apicaller,
             }}
         >
             {children}

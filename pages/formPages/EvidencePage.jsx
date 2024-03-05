@@ -84,7 +84,7 @@ const EvidencePage = ({activePage, setPage, btnDisabled, setBtnDisabled}) => {
                 </div>}
               {evidence == 'others' && <div>
                   <p className=" font-semibold">Please State the kind of Evidence You've Got.</p>
-                  <textarea placeholder='Type Here...' className='w-full h-[100px] border-2 px-3 border-primary outline-none rounded-md' ></textarea>
+                  <textarea onChange={e => setEvidenceFile(e.target.value)} placeholder='Type Here...' className='w-full h-[100px] border-2 px-3 border-primary outline-none rounded-md' ></textarea>
                 </div>}
             </div>
           </div>

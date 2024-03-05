@@ -8,14 +8,17 @@ import EvidencePage from '../pages/formPages/EvidencePage';
 import ActionTakenPage from '../pages/formPages/ActionTakenPage';
 import Welcome from '../pages/formPages/Welcome';
 import ActionWants from '../pages/formPages/ActionWants';
+import FormReview from '../pages/formPages/FormReview';
 
 const ReportForm = () => {
     const [activePage, setPage] = useState(1)
     const [btnDisabled1, setBtnDisabled1] = useState(true)
     const [btnDisabled2, setBtnDisabled2] = useState(true)
     const [btnDisabled3, setBtnDisabled3] = useState(true)
-    const [btnDisabled4, setBtnDisabled4] = useState(false)
     const [btnDisabled5, setBtnDisabled5] = useState(true)
+
+    const [takenBtn, setTakenBtn] = useState(true)
+
     
     // ================= FORM VALIDATION ====================== //
     const { setWho } = ContextUser();
@@ -76,8 +79,8 @@ const ReportForm = () => {
                 activePage == 5 && <ActionTakenPage
                     activePage={activePage}
                     setPage={setPage}
-                    btnDisabled={btnDisabled4}
-                    setBtnDisabled={setBtnDisabled4}
+                    btnDisabled={takenBtn}
+                    setBtnDisabled={setTakenBtn}
                 />
             }
 
@@ -89,6 +92,7 @@ const ReportForm = () => {
                     setBtnDisabled={setBtnDisabled5}
                 />
             }
+
 
 
             {/* ================ BUTTON SECTION ======================== */}

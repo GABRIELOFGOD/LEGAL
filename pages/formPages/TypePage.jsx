@@ -42,7 +42,7 @@ const TypePage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
 
           <div className='flex gap-3'>
             <label className='font-semibold text-[12px]' htmlFor="65above">65 and above</label>
-            <input checked={victimAge == '12below'} onChange={e => changeVictimAge(e)} value='65above' type="radio" id='65above' name='victim-age' />
+            <input checked={victimAge == '65above'} onChange={e => changeVictimAge(e)} value='65above' type="radio" id='65above' name='victim-age' />
           </div>
 
           <div className='flex gap-3'>
