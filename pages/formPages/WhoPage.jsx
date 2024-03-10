@@ -3,10 +3,19 @@ import { ContextUser } from '../../utils/context'
 import { ReportPage } from '../../utils/constants';
 
 const WhoPage = ({activePage, btnDisabled1, setBtnDisabled1, setPage}) => {
-    const { who, setWho } = ContextUser();
+    const { who, setWho, gender, setGender } = ContextUser();
 
     const changeWho = e => {
         setWho(e.target.value)
+    }
+
+    const changeGender = e => {
+        setGender(e.target.value)
+    }
+
+    if(who && gender){
+        setBtnDisabled1(false)
+    } else {
         setBtnDisabled1(false)
     }
 
@@ -22,6 +31,20 @@ const WhoPage = ({activePage, btnDisabled1, setBtnDisabled1, setPage}) => {
                 <div className='flex gap-2'>
                     <label htmlFor='someone' className="font-semibold">Someone else</label>
                     <input checked={who == 'someone'} onChange={e => changeWho(e)} value={'someone'} type="radio" name="who" id="someone" />
+                </div>
+            </div>
+        </div>
+        <div className="flex flex-col">
+            <p className="text-2xl mb-2 font-bold">Victim's Gender</p>
+            
+            <div className="flex gap-10">
+                <div className='flex gap-2'>
+                    <label htmlFor='male' className="font-semibold">Male</label>
+                    <input checked={gender == 'male'} onChange={e => changeGender(e)} value={'male'} type="radio" name="gender" id="male" />
+                </div>
+                <div className='flex gap-2'>
+                    <label htmlFor='female' className="font-semibold">Female</label>
+                    <input checked={gender == 'female'} onChange={e => changeGender(e)} value={'female'} type="radio" name="gender" id="female" />
                 </div>
             </div>
         </div>

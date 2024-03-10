@@ -21,7 +21,7 @@ const EvidencePage = ({activePage, setPage, btnDisabled, setBtnDisabled}) => {
     setEvidenceFile(null)
   }
 
-  if(!gotEvidence || evidenceFile){
+  if(evidenceFile){
     setBtnDisabled(false)
   } else {
     setBtnDisabled(true)

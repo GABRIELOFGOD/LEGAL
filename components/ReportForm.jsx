@@ -27,6 +27,7 @@ const ReportForm = () => {
 
   return (
     <div className='flex flex-col items-center max-w-[700px] mt-10 justify-center w-full'>
+
         <div className='flex '>
             {
                 ReportPage.map((page, i) => (
@@ -39,6 +40,8 @@ const ReportForm = () => {
                 ))
             }
         </div>
+
+        <p className="text-center text-secondary mt-5 font-semibold">6 Steps to Report</p>
 
         <form className='mt-10 md:mt-20' onSubmit={e => e.preventDefault()}>
 

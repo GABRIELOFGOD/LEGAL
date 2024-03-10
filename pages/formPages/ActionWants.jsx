@@ -5,7 +5,7 @@ import { ContextUser } from '../../utils/context'
 const ActionWants = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
   const { actionWant, setWant, apicaller, review, setReview } = ContextUser();
 
-  if(actionWant == 'counsellor' || actionWant == 'legal') {
+  if(actionWant == 'counsellor' || actionWant == 'legal' || actionWant == 'social') {
     setBtnDisabled(false)
   } else {
     setBtnDisabled(true)
@@ -19,6 +19,7 @@ const ActionWants = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
             <option disabled value="non">-- Select an Option --</option>
             <option value="counsellor">counsellor service</option>
             <option value="legal">provide legal service</option>
+            <option value="social">Psyco-social Support</option>
             <option value="others">Others</option>
           </select>
         </div>

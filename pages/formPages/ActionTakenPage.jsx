@@ -10,7 +10,7 @@ const ActionTakenPage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => 
     context: ''
   })
 
-  if(actionTaken == 'report-web' || actionTaken == 'combact' || actionTaken == 'police' || actionTaken == 'non'){
+  if(actionTaken == 'report-web' || actionTaken == 'combact' || actionTaken == 'police' || actionTaken == 'non' || actionTaken == 'fear' || actionTaken == 'cried'){
     setBtnDisabled(false)
   } else {
     setBtnDisabled(true)
@@ -29,6 +29,8 @@ const ActionTakenPage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => 
             <option value="report-web">Report the website</option>
             <option value="combact">Engage in physical combact</option>
             <option value="police">Report to the police</option>
+            <option value="cried">Express Emotional Concern</option>
+            <option value="fear">Afraid of taking action</option>
             <option value="others">Others</option>
           </select>
           {actionTaken == 'others' && <textarea onChange={e => setInput({context: e.target.value})} placeholder='Please let us know what action you have taken.' className='w-full p-3 h-[100px] mt-5 border-2 border-primary rounded-md'></textarea>}

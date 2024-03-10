@@ -5,7 +5,8 @@ const Context = createContext();
 export const CreateUserContext = ({children}) => {
 
     // =================== REPORT FROM STATES ============================ //
-    const [who, setWho] = useState(null)
+    const [who, setWho] = useState(null);
+    const [gender, setGender] = useState(null)
     const [type, setType] = useState('non')
     const [info, setInfo] = useState('')
     const [gotEvidence, setGotEvidence] = useState(false)
@@ -42,6 +43,7 @@ export const CreateUserContext = ({children}) => {
                 actionTaken, setTaken,
                 actionWant, setWant,
                 review, setReview,
+                gender, setGender,
 
                 // ========= API FUNCTION =========== //
                 apicaller,
