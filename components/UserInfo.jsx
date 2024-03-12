@@ -68,7 +68,7 @@ const UserInfo = ({show, setShow}) => {
                     <input placeholder='Enter your Phone Number' className='w-full text-xs py-3 px-5 outline-none border-2 border-primary' type="text" id='username' value={phone} onChange={e => setPhone(e.target.value)} />
                 </div>
 
-                {lastLoad ? <button onClick={e => formSubmitter(e)} className={`w-full py-3 bg-primary text-white text-xs hover:bg-secondary duration-200`}><Oval height={50} width={50} color='white' /></button> : <button onClick={e => formSubmitter(e)} className={`w-full py-3 bg-primary text-white text-xs hover:bg-secondary duration-200`}>SUBMIT REPORT</button>}
+                {lastLoad ? <button onClick={e => formSubmitter(e)} className={`w-full py-3 flex items-center justify-center bg-primary text-white text-xs hover:bg-secondary duration-200`}><Oval height={40} width={40} color='white' /></button> : <button onClick={e => formSubmitter(e)} className={`w-full py-3 bg-primary text-white text-xs hover:bg-secondary duration-200`}>SUBMIT REPORT</button>}
             </div>
         </div>
         
