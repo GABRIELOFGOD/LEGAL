@@ -28,7 +28,7 @@ const ReportForm = () => {
   return (
     <div className='flex flex-col items-center max-w-[700px] mt-10 justify-center w-full'>
 
-        <div className='flex '>
+        <div className='md:flex hidden '>
             {
                 ReportPage.map((page, i) => (
                     <div key={i} className={`pagecont pr-5 ${activePage == i+1 && 'active'} ${i + 1 < activePage && 'completed'}`}>
@@ -41,7 +41,7 @@ const ReportForm = () => {
             }
         </div>
 
-        <p className="text-center text-secondary mt-5 font-semibold">6 Steps to Report</p>
+        <p className="text-center text-secondary mt-5 hidden md:flex font-semibold">6 Steps to Report</p>
 
         <form className='mt-10 md:mt-20' onSubmit={e => e.preventDefault()}>
 

@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import toast from "react-hot-toast";
 
 const Context = createContext();
 
@@ -27,6 +28,91 @@ export const CreateUserContext = ({children}) => {
 
     const changeVictimAge = e => setVictimAge(e.target.value);
 
+    const [lastPrompt, setPrompt] = useState(false)
+
+    const [lastLoad, setLastLoad] = useState(false)
+
+    const [caseCode, setCaseCode] = useState(null)
+
+    const [recMail, setMail] = useState(null)
+
+    const [recName, setName] = useState(null)
+
+    // ==================================== WORKING ON CHATBOT =================================== //
+    const [botContent, setBotContent] = useState([
+        {
+            by: 'bot',
+            message: 'Hello',
+            other: ''
+        },
+        {
+            by: 'user',
+            message: 'hi',
+            other: ''
+        },
+        {
+            by: 'bot',
+            message: 'Hello',
+            other: ''
+        },
+        {
+            by: 'user',
+            message: 'hi',
+            other: ''
+        },
+        {
+            by: 'bot',
+            message: 'Hello',
+            other: ''
+        },
+        {
+            by: 'user',
+            message: 'hi',
+            other: ''
+        },
+    ])
+    // ==================================== WORKING ON CHATBOT =================================== //
+
+
+    // ================================ WORKING ON CASE TRACKING ============================== //
+
+    const [trackMail, setTrackMail] = useState('')
+    const [trackCode, setTrackCode] = useState('')
+    
+    const caseTrackingRequest = async e => {
+        e.preventDefault();
+
+        const res = await fetch(`${baseUrl}/abuse/track`, {
+            method: 'POST',
+            body: JSON.stringify({
+                email: trackMail,
+                caseCode: trackCode
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        const response = await res.json();
+
+        if(!res.ok){
+            toast.error(response.error, {
+                duration: 5000,
+                className: 'text-[12px]',
+                position: 'top-right'
+            })
+        }
+
+        if(res.ok){
+            location.assign('track')
+        }
+
+        console.log(response)
+    }
+    
+    // ================================ WORKING ON CASE TRACKING ============================== //
+
+
 
     // ======================== API CALLS ======================== //
     const apicaller = () => {
@@ -38,6 +124,7 @@ export const CreateUserContext = ({children}) => {
     
     // ================= SUBMITING REPORT ================= //
     const reportFunction = async (e) => {
+        setLastLoad(true)
         e.preventDefault();
         // const [togoEvi, setTogo] = useState(null)
         // if(evidence == 'url' || evidence == 'others') ''
@@ -64,8 +151,21 @@ export const CreateUserContext = ({children}) => {
 
         const response = await res.json()
 
-        console.log('Form-Data', formData)
-        console.log(response)
+        if(!res.ok){
+            toast.error(response.error, {
+                duration: 5000,
+                className: 'text-[12px]',
+                position: 'top-right'
+            })
+            setLastLoad(false)
+        }
+
+        if(res.ok){
+            setCaseCode(response.caseCode)
+            setMail(response.email)
+            setName(response.name)
+            setPrompt(true)
+        }
 
     }
 
@@ -86,10 +186,23 @@ export const CreateUserContext = ({children}) => {
                 username, setUsername,
                 userEmail, setUserEmail,
                 phone, setPhone,
+                setPrompt, lastPrompt,
+                lastLoad, setLastLoad,
+                caseCode, recMail, recName,
+
+                // ========== TRACK =========== //
+                trackCode, setTrackCode,
+                trackMail, setTrackMail,
+                // ========== TRACK =========== //
+
+                // =========== BOT ============= //
+                botContent, setBotContent,
+                // =========== BOT ============= //
 
                 // ========= API FUNCTION =========== //
                 apicaller,
                 reportFunction,
+                caseTrackingRequest,
             }}
         >
             {children}

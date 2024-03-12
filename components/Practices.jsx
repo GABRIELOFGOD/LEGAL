@@ -6,7 +6,7 @@ const Practices = () => {
   return (
     <div className='bg-primary px-6 text-white md:py-20 py-10'>
       <div className="flex flex-col items-center justify-center">
-        <p className="text-heading font-bold text-center">Our Practice Areas</p>
+        <p className="md:text-heading text-3xl font-bold text-center">Our Practice Areas</p>
         <p className="text-center md:w-[431px]">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
       </div>
       <div className='flex flex-wrap md:px-52 py-10 gap-10 justify-between px-6'>

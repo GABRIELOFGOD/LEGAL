@@ -7,7 +7,7 @@ const KnowAbout = () => {
         <div className='w-[100px] mt-2 bg-black h-[2px]'></div>
         <div className='flex flex-col gap-10'>
           <p className="text-sm uppercase font-bold">Know About us</p>
-          <p className="text-second leading-[60px] text-primary font-bold">We give voice to the voiceless and ensure their survival</p>
+          <p className="md:text-second text-3xl md:leading-[60px] text-primary font-bold">We give voice to the voiceless and ensure their survival</p>
           <div className="flex flex-col gap-5">
             <p className="text-textSecondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
             <p className="text-textSecondary">‍Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>

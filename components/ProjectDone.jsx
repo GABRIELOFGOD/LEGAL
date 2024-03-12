@@ -10,7 +10,7 @@ const ProjectDone = () => {
                 <div className='w-[100px] mt-2 bg-black h-[2px]'></div>
                 <div className='flex flex-col gap-10'>
                     <p className="text-sm uppercase font-bold">Project we have done</p>
-                    <p className="text-second leading-[60px] text-primary font-bold">Since we embark on this mission, we have notable milestones</p>
+                    <p className="md:text-second text-3xl leading-[60px] text-primary font-bold">Since we embark on this mission, we have notable milestones</p>
                 </div>
             </div>
         </div>

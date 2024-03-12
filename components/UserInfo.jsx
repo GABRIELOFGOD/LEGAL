@@ -3,9 +3,11 @@ import { ContextUser } from '../utils/context'
 import { IoMdClose } from 'react-icons/io';
 import { isValidEmail, isValidPhone } from '../utils/validator';
 import toast, { Toaster } from 'react-hot-toast';
+import Prompt from './Prompt';
+import { Oval } from 'react-loader-spinner';
 
 const UserInfo = ({show, setShow}) => {
-    const { username, userEmail, setUsername, setUserEmail, phone, setPhone, reportFunction } = ContextUser();
+    const { username, userEmail, setUsername, setUserEmail, phone, setPhone, reportFunction, lastLoad, lastPrompt } = ContextUser();
 
     // const [subDis, setDis] = useState(false);
     const [goodToGo, setGood] = useState(false)
@@ -45,7 +47,7 @@ const UserInfo = ({show, setShow}) => {
     }
     
   return (
-    <div className={`flex-col justify-center items-center bg-black bg-opacity-80 w-full h-full top-0 left-0 absolute ${show ? 'flex' : 'hidden'}`}>
+    <div className={`flex-col justify-center z-40 items-center bg-black bg-opacity-80 w-full h-full top-0 left-0 absolute ${show ? 'flex' : 'hidden'}`}>
         <div className="bg-white relative rounded-md py-16 w-[400px] px-10 shadow-md">
             <div onClick={() => setShow(false)} className='absolute cursor-pointer font-bold text-primary text-2xl right-5 top-5'><IoMdClose /></div>
             <p className="text-primary font-semibold text-center mb-3 text-xl">Your Informations has been received, and proper actions will be taken. Can you please provide us this informations so we can help you further?</p>
@@ -66,11 +68,12 @@ const UserInfo = ({show, setShow}) => {
                     <input placeholder='Enter your Phone Number' className='w-full text-xs py-3 px-5 outline-none border-2 border-primary' type="text" id='username' value={phone} onChange={e => setPhone(e.target.value)} />
                 </div>
 
-                <button onClick={e => formSubmitter(e)} className={`w-full py-3 bg-primary text-white text-xs hover:bg-secondary duration-200`}>SUBMIT REPORT</button>
+                {lastLoad ? <button onClick={e => formSubmitter(e)} className={`w-full py-3 bg-primary text-white text-xs hover:bg-secondary duration-200`}><Oval height={50} width={50} color='white' /></button> : <button onClick={e => formSubmitter(e)} className={`w-full py-3 bg-primary text-white text-xs hover:bg-secondary duration-200`}>SUBMIT REPORT</button>}
             </div>
         </div>
         
       {/* <Toaster /> */}
+      {lastPrompt && <Prompt />}
     </div>
   )
 }

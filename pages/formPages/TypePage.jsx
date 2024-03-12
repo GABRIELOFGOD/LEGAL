@@ -19,7 +19,7 @@ const TypePage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
     <div className='flex flex-col items-center gap-5'>
       <div className='flex flex-col gap-5'>
         <p className="text-2xl font-bold">Age of the victim:</p>
-        <div className='flex gap-6'>
+        <div className='flex flex-col md:flex-row gap-6'>
           <div className='flex gap-2'>
             <label className='font-semibold text-[12px]' htmlFor="12below">12 and below</label>
             <input checked={victimAge == '12below'} onChange={e => changeVictimAge(e)} value='12below' type="radio" id='12below' name='victim-age' />
@@ -36,7 +36,7 @@ const TypePage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
           </div>
 
           <div className='flex gap-3'>
-            <label className='font-semibold text-[12px]' htmlFor="45-65">46 to 65</label>
+            <label className='font-semibold text-[12px]' htmlFor="46-65">46 to 65</label>
             <input checked={victimAge == '46-65'} onChange={e => changeVictimAge(e)} value='46-65' type="radio" id='46-65' name='victim-age' />
           </div>
 
