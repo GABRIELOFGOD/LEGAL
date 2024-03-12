@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 const Context = createContext();
 
 export const CreateUserContext = ({children}) => {
+    const baseUrl = 'http://localhost:3000'
 
     // =================== REPORT FROM STATES ============================ //
     const [who, setWho] = useState(null);
@@ -17,6 +18,10 @@ export const CreateUserContext = ({children}) => {
     const [actionTaken, setTaken] = useState('non')
     const [actionWant, setWant] = useState(null)
 
+    const [username, setUsername] = useState(null)
+    const [userEmail, setUserEmail] = useState(null)
+    const [phone, setPhone] = useState(null)
+
     // ===================== STATES FOR EVIDENCE =================== //
     const [evidenceFile, setEvidenceFile] = useState(null);
 
@@ -28,6 +33,40 @@ export const CreateUserContext = ({children}) => {
         const formData = new FormData();
         formData.append('who', who)
         console.log(formData)
+    }
+
+    
+    // ================= SUBMITING REPORT ================= //
+    const reportFunction = async (e) => {
+        e.preventDefault();
+        // const [togoEvi, setTogo] = useState(null)
+        // if(evidence == 'url' || evidence == 'others') ''
+        if(!username) setUsername('Anonymous')
+        const formData = new FormData();
+        formData.append('name', username)
+        formData.append('email', userEmail)
+        formData.append('who', who)
+        formData.append('phone', phone)
+        formData.append('age', victimAge)
+        formData.append('gender', gender)
+        formData.append('abuse', type)
+        formData.append('evidenceType', evidence)
+        formData.append('evidence', evidenceFile)
+        formData.append('actionTaken', actionTaken)
+        formData.append('actionWant', actionWant)
+        formData.append('reportMeans', 'form')
+
+        const res = await fetch(`${baseUrl}/abuse/post`, {
+            method: 'POST',
+            body: formData,
+            credentials: 'include'
+        })
+
+        const response = await res.json()
+
+        console.log('Form-Data', formData)
+        console.log(response)
+
     }
 
     return(
@@ -44,9 +83,13 @@ export const CreateUserContext = ({children}) => {
                 actionWant, setWant,
                 review, setReview,
                 gender, setGender,
+                username, setUsername,
+                userEmail, setUserEmail,
+                phone, setPhone,
 
                 // ========= API FUNCTION =========== //
                 apicaller,
+                reportFunction,
             }}
         >
             {children}

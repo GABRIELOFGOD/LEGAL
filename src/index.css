@@ -128,3 +128,16 @@ p{
 .active:not(:first-child)::before{
     @apply bg-greener
 }
+
+.bot{
+    animation: bounce .5s alternate linear infinite;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(-10px);
+    }
+    1000%{
+        transform: translateY(10px);
+    }
+}

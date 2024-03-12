@@ -16,7 +16,7 @@ const WhoPage = ({activePage, btnDisabled1, setBtnDisabled1, setPage}) => {
     if(who && gender){
         setBtnDisabled1(false)
     } else {
-        setBtnDisabled1(false)
+        setBtnDisabled1(true )
     }
 
   return (

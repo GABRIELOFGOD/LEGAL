@@ -36,13 +36,13 @@ const TypePage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
           </div>
 
           <div className='flex gap-3'>
-            <label className='font-semibold text-[12px]' htmlFor="45-65">45 to 65</label>
-            <input checked={victimAge == '45-65'} onChange={e => changeVictimAge(e)} value='45-65' type="radio" id='45-65' name='victim-age' />
+            <label className='font-semibold text-[12px]' htmlFor="45-65">46 to 65</label>
+            <input checked={victimAge == '46-65'} onChange={e => changeVictimAge(e)} value='46-65' type="radio" id='46-65' name='victim-age' />
           </div>
 
           <div className='flex gap-3'>
-            <label className='font-semibold text-[12px]' htmlFor="65above">65 and above</label>
-            <input checked={victimAge == '65above'} onChange={e => changeVictimAge(e)} value='65above' type="radio" id='65above' name='victim-age' />
+            <label className='font-semibold text-[12px]' htmlFor="66above">66 and above</label>
+            <input checked={victimAge == '66above'} onChange={e => changeVictimAge(e)} value='66above' type="radio" id='66above' name='victim-age' />
           </div>
 
           <div className='flex gap-3'>
