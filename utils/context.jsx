@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import toast from "react-hot-toast";
+import { botMsg } from "./BotContextMsg";
+import { isValidPhone } from "./validator";
 
 const Context = createContext();
 
@@ -39,38 +41,138 @@ export const CreateUserContext = ({children}) => {
     const [recName, setName] = useState(null)
 
     // ==================================== WORKING ON CHATBOT =================================== //
+    const [botPlace, setBotPlace] = useState('')
+    const [botSug, setBotSug] = useState(null)
+    const [botMsgStage, setBotMsgStage] = useState(1)
+    const [botInputDisabled, setInputDesabled] = useState(false)
     const [botContent, setBotContent] = useState([
-        {
-            by: 'bot',
-            message: 'Hello',
-            other: ''
-        },
-        {
-            by: 'user',
-            message: 'hi',
-            other: ''
-        },
-        {
-            by: 'bot',
-            message: 'Hello',
-            other: ''
-        },
-        {
-            by: 'user',
-            message: 'hi',
-            other: ''
-        },
-        {
-            by: 'bot',
-            message: 'Hello',
-            other: ''
-        },
-        {
-            by: 'user',
-            message: 'hi',
-            other: ''
-        },
+        // {
+        //     by: 'bot',
+        //     message: botMsg[0].msg,
+        //     other: {
+        //         place: botMsg[0].place,
+        //         lim: botMsg[0].lim
+        //     }
+        // },
+        // {
+        //     by: 'user',
+        //     message: 'hi',
+        //     other: ''
+        // },
+        // {
+        //     by: 'bot',
+        //     message: 'Hello',
+        //     other: ''
+        // },
+        // {
+        //     by: 'user',
+        //     message: 'hi',
+        //     other: ''
+        // },
+        // {
+        //     by: 'bot',
+        //     message: 'Hello',
+        //     other: ''
+        // },
+        // {
+        //     by: 'user',
+        //     message: 'hi',
+        //     other: ''
+        // },
     ])
+
+
+
+    const [userBotMsg, setUserBotMsg] = useState('')
+    const [botProceed, setBotProceed] = useState(true)
+
+    const botUserSubmitMsg = async e => {
+        e.preventDefault();
+        if(botProceed){
+            setBotMsgStage(botMsgStage + 1)
+        } else {
+            setBotMsgStage(botMsgStage - 1)
+        }
+
+        // ======================= CHECKING IF RESPONSE IS VALID ====================== //
+        if(botMsg[botMsgStage - 1].atr == 'phone'){
+            // setBotMsgStage(botMsgStage + 1)
+            let isPhone = isValidPhone(userBotMsg)
+            if(isPhone){
+                setBotProceed(true)
+                setBotMsgStage(botMsgStage + 1)
+                setBotContent([...botContent, {
+                    by: 'user',
+                    message: userBotMsg,
+                    other: ''
+                },
+                {
+                    by: 'bot',
+                    message: botMsg[botMsgStage].msg,
+                    other: {
+                        place: botMsg[botMsgStage].place,
+                        limite: botMsg[botMsgStage].lim,
+                        suggest: botMsg[botMsgStage].sug,
+                        pre: botMsg[botMsgStage].pre,
+                        disableBtn: botMsg[botMsgStage].dis
+                    }
+                }
+                ])
+            } else {
+                setBotProceed(false)
+                setBotContent([...botContent, {
+                    by: 'user',
+                    message: userBotMsg,
+                    other: ''
+                },
+                {
+                    by: 'bot',
+                    message: 'This is not a valid phone number, can you please retype your number?',
+                    other: {
+                        place: botMsg[botMsgStage].place,
+                        limite: botMsg[botMsgStage].lim,
+                        suggest: botMsg[botMsgStage].sug,
+                        pre: botMsg[botMsgStage].pre,
+                        disableBtn: botMsg[botMsgStage].dis
+                    }
+                }
+                ])
+            }
+        } else {
+            setBotContent([...botContent, {
+                by: 'user',
+                message: userBotMsg,
+                other: ''
+            },
+            {
+                by: 'bot',
+                message: botMsg[botMsgStage].msg,
+                other: {
+                    place: botMsg[botMsgStage].place,
+                    limite: botMsg[botMsgStage].lim,
+                    suggest: botMsg[botMsgStage].sug,
+                    pre: botMsg[botMsgStage].pre,
+                    disableBtn: botMsg[botMsgStage].dis
+                }
+            }
+            ])
+        }
+        
+        setUserBotMsg('')
+        // await setBotContent([...botContent, {
+        //     by: 'bot',
+        //     message: botMsg[botMsgStage].msg,
+        //     other: {
+        //         place: botMsg[botMsgStage].place,
+        //         limite: botMsg[botMsgStage].lim,
+        //         suggest: botMsg[botMsgStage].sug,
+        //         pre: botMsg[botMsgStage].pre,
+        //         disableBtn: botMsg[botMsgStage].dis
+        //     }
+        // }])
+    }
+
+
     // ==================================== WORKING ON CHATBOT =================================== //
 
 
@@ -197,6 +299,10 @@ export const CreateUserContext = ({children}) => {
 
                 // =========== BOT ============= //
                 botContent, setBotContent,
+                userBotMsg, setUserBotMsg,
+                botPlace, setBotPlace,
+                botSug, setBotSug, botUserSubmitMsg,
+                botInputDisabled, setInputDesabled,
                 // =========== BOT ============= //
 
                 // ========= API FUNCTION =========== //

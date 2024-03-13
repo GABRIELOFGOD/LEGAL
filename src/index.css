@@ -133,6 +133,10 @@ p{
     animation: bounce .5s alternate linear infinite;
 }
 
+.see::-webkit-scrollbar{
+    display: none;
+}
+
 @keyframes bounce {
     0%{
         transform: translateY(-10px);
