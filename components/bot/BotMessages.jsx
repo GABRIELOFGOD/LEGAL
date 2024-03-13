@@ -5,7 +5,7 @@ import { BiBot } from 'react-icons/bi';
 import { FaUser } from 'react-icons/fa6';
 
 const BotMessages = () => {
-    const { botContent, setBotContent } = ContextUser();
+    const { botContent, setBotContent, userPreName } = ContextUser();
 
   return (
     <div>
@@ -17,6 +17,7 @@ const BotMessages = () => {
                         <BotOneMessage
                             message={message.message}
                             sender={message.by}
+                            pre={userPreName}
                         />
                     </div>
                     {message.by == 'user' && <div className='h-[35px] w-[35px] rounded-full bg-primary text-white flex items-center justify-center text-xl'><FaUser /></div>}

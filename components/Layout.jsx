@@ -43,7 +43,7 @@ const Layout = () => {
           setShow={setBot}
         />
       </div>
-      
+      <ScrollRestoration />
       <Footer />
     </div>
   )

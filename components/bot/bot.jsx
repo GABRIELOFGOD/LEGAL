@@ -37,10 +37,8 @@ const bot = ({show, setShow}) => {
       </div>
 
       {/* ============== BOT CONTENT BODY ================== // */}
-      <div className='h-full bg-gray-200 text-sm md:text-sm px-6 md:px-10 flex flex-col justify-end'>
-        <div className="overflow-auto see">
+      <div className='h-full overflow-auto bg-gray-200 text-sm md:text-sm px-6 md:px-10 flex flex-col justify-end'>
           <BotMessages />
-        </div>
         <div className='flex flex-wrap gap-2'>
           {botSug && 
             botSug?.map((msg, i) => (

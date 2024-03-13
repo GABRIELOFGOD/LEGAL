@@ -6,7 +6,8 @@ import { isValidPhone } from "./validator";
 const Context = createContext();
 
 export const CreateUserContext = ({children}) => {
-    const baseUrl = 'http://localhost:3000'
+    const baseUrl = 'https://safernet-v1.vercel.app'
+    // const baseUrl = 'http://localhost:3000'
 
     // =================== REPORT FROM STATES ============================ //
     const [who, setWho] = useState(null);
@@ -45,6 +46,7 @@ export const CreateUserContext = ({children}) => {
     const [botSug, setBotSug] = useState(null)
     const [botMsgStage, setBotMsgStage] = useState(1)
     const [botInputDisabled, setInputDesabled] = useState(false)
+    const [userPreName, setUserPreName] = useState('')
     const [botContent, setBotContent] = useState([
         // {
         //     by: 'bot',
@@ -83,6 +85,7 @@ export const CreateUserContext = ({children}) => {
 
 
 
+
     const [userBotMsg, setUserBotMsg] = useState('')
     const [botProceed, setBotProceed] = useState(true)
 
@@ -93,6 +96,20 @@ export const CreateUserContext = ({children}) => {
         } else {
             setBotMsgStage(botMsgStage - 1)
         }
+
+        if(botMsgStage == 1){
+            setUserPreName(userBotMsg)
+        } else {
+            setUserPreName('')
+        }
+        
+        // botMsg.map(msg => {
+        //     if(msg.atr == 'name'){
+        //         setUserPreName(userBotMsg)
+        //     } else {
+        //         setUserPreName('')
+        //     }
+        // })
 
         // ======================= CHECKING IF RESPONSE IS VALID ====================== //
         if(botMsg[botMsgStage - 1].atr == 'phone'){
@@ -303,6 +320,7 @@ export const CreateUserContext = ({children}) => {
                 botPlace, setBotPlace,
                 botSug, setBotSug, botUserSubmitMsg,
                 botInputDisabled, setInputDesabled,
+                userPreName, setUserPreName,
                 // =========== BOT ============= //
 
                 // ========= API FUNCTION =========== //
