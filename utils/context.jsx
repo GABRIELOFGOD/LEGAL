@@ -197,9 +197,13 @@ export const CreateUserContext = ({children}) => {
 
     const [trackMail, setTrackMail] = useState('')
     const [trackCode, setTrackCode] = useState('')
+    const [newTracking, setNewTracking] = useState(null)
+    const [logCase, setLogCase] = useState(true)
+    const [findLoad, setFindLoad] = useState(false)
     
     const caseTrackingRequest = async e => {
         e.preventDefault();
+        setFindLoad(true)
 
         const res = await fetch(`${baseUrl}/abuse/track`, {
             method: 'POST',
@@ -220,14 +224,17 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 position: 'top-right'
             })
+            setFindLoad(false)
         }
 
         if(res.ok){
-            location.assign('track')
+            console.log(response.checkedCaseCode)
+            setNewTracking(response.checkedCaseCode)
+            setFindLoad(false)
+            setLogCase(false)
         }
-
-        console.log(response)
     }
+    // console.log(newRes)
     
     // ================================ WORKING ON CASE TRACKING ============================== //
 
@@ -237,7 +244,7 @@ export const CreateUserContext = ({children}) => {
     const apicaller = () => {
         const formData = new FormData();
         formData.append('who', who)
-        console.log(formData)
+        // console.log(formData) 
     }
 
     
@@ -322,6 +329,11 @@ export const CreateUserContext = ({children}) => {
                 botInputDisabled, setInputDesabled,
                 userPreName, setUserPreName,
                 // =========== BOT ============= //
+
+                // ======= CASE TRACKING ========= //
+                newTracking, logCase, setLogCase,
+                findLoad, setFindLoad,
+                // ======= CASE TRACKING ========= //
 
                 // ========= API FUNCTION =========== //
                 apicaller,

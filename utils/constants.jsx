@@ -120,5 +120,22 @@ export const project = [
 export const ReportPage = ['Welcome', 'person abused', 'type of abuse', 'evidence', 'action taken', 'action want']
 
 
-
+export const faqs = [
+    {
+        title: 'How do I make a report',
+        answer: "Click on the 'MAKE REPORT' button above follow the prompt. Supply all necessary information accurately so we can help you better."
+    },
+    {
+        title: 'Should I report even if I am treatened with death?',
+        answer: "Make report as we assure you safety through our safety mechanism. Your silence won't avenge or end your suffering."
+    },
+    {
+        title: 'How do I make a report',
+        answer: "Click on the 'MAKE REPORT' button above follow the prompt. Supply all necessary information accurately so we can help you better."
+    },
+    {
+        title: 'How do I make a report',
+        answer: "Click on the 'MAKE REPORT' button above follow the prompt. Supply all necessary information accurately so we can help you better."
+    },
+]
 

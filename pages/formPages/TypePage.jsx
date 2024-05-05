@@ -5,7 +5,7 @@ import { ContextUser } from '../../utils/context'
 const TypePage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
   const { type, setType, info, setInfo, changeVictimAge, victimAge } = ContextUser();
 
-  if(type == 'child' || type == 'domestic' || type == 'assault' || (type == 'others' && info.length > 2)) {
+  if(type == 'child' || type == 'domestic' || type == 'assault' || type == 'emotion' || type == 'finance' || type == 'sexual' || type == 'neglet' || type == 'elder' || type == 'cyber' || type == 'stalking' || type == 'spiritual' || type == 'workspace' || type == 'medical' || type == 'unathourized_data' || type == 'cutural' || type == 'substace' || (type == 'others' && info.length > 2)) {
     if(victimAge) {
       setBtnDisabled(false)
     } else {
@@ -64,6 +64,19 @@ const TypePage = ({activePage, btnDisabled, setBtnDisabled, setPage}) => {
           <option value="child">Child Abuse</option>
           <option value="domestic">Domestic Violence</option>
           <option value="assault">Assault</option>
+          <option value="emotion">Emotion/Psychological Abuse</option>
+          <option value="finance">Financial Abuse</option>
+          <option value="sexual">Sexual Abuse</option>
+          <option value="neglet">Neglect</option>
+          <option value="elder">Elder Abuse</option>
+          <option value="cyber">Cyberbullying</option>
+          <option value="stalking">Stalking</option>
+          <option value="spiritual">Spiritual and Religious</option>
+          <option value="workspace">Workplace Bullying/Harassement</option>
+          <option value="medical">Medical Abuse</option>
+          <option value="unathourized_data">Unauthorised Data sharing(Nude, personal data etc.)</option>
+          <option value="cutural">Cultural Abuse</option>
+          <option value="substace">Substance Abuse</option>
           <option value="others">Others</option>
         </select>
       </div>

@@ -137,6 +137,33 @@ p{
     display: none;
 }
 
+.form input{
+    @apply h-10 w-full border-2 border-primary outline-none px-5 rounded-sm
+}
+
+.form textarea{
+    @apply h-32 w-full border-2 border-primary outline-none px-5 rounded-sm
+}
+
+.about{
+    background: url('/images/judge-hammer.jpg');
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+}
+
+.about::after{
+    content: '';
+    background: rgba(0, 0, 0, 0.46);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @keyframes bounce {
     0%{
         transform: translateY(-10px);
