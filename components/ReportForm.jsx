@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ReportPage } from '../utils/constants';
 import {TiTick} from 'react-icons/ti'
 import WhoPage from '../pages/formPages/WhoPage';
@@ -9,6 +9,8 @@ import ActionTakenPage from '../pages/formPages/ActionTakenPage';
 import Welcome from '../pages/formPages/Welcome';
 import ActionWants from '../pages/formPages/ActionWants';
 import FormReview from '../pages/formPages/FormReview';
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const ReportForm = () => {
     const [activePage, setPage] = useState(1)
@@ -19,6 +21,9 @@ const ReportForm = () => {
 
     const [takenBtn, setTakenBtn] = useState(true)
 
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    },[])
     
     // ================= FORM VALIDATION ====================== //
     const { setWho } = ContextUser();
@@ -32,10 +37,10 @@ const ReportForm = () => {
             {
                 ReportPage.map((page, i) => (
                     <div key={i} className={`pagecont pr-5 ${activePage == i+1 && 'active'} ${i + 1 < activePage && 'completed'}`}>
-                        <div className='step'>
+                        <div className='step' data-aos="fade-right">
                             {i + 1 < activePage ? <TiTick size={20} /> : i + 1}
                         </div>
-                        <p className='text-textSecondary capitalize'>{page}</p>
+                        <p className='text-textSecondary capitalize' data-aos="fade-left">{page}</p>
                     </div>
                 ))
             }
@@ -43,7 +48,7 @@ const ReportForm = () => {
 
         <p className="text-center text-secondary mt-5 hidden md:flex font-semibold">6 Steps to Report</p>
 
-        <form className='mt-10 md:mt-20' onSubmit={e => e.preventDefault()}>
+        <form className='mt-5 md:mt-10' onSubmit={e => e.preventDefault()}>
 
             {/* ================ WELCOME SECTION ======================= */}
             { activePage == 1 && <Welcome

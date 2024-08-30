@@ -6,8 +6,8 @@ import { isValidPhone } from "./validator";
 const Context = createContext();
 
 export const CreateUserContext = ({children}) => {
-    const baseUrl = 'https://safernet-v1.vercel.app'
-    // const baseUrl = 'http://localhost:3000'
+    // const baseUrl = 'https://safernet-v1.vercel.app'
+    const baseUrl = 'http://localhost:3000'
 
     // =================== REPORT FROM STATES ============================ //
     const [who, setWho] = useState(null);
