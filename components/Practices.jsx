@@ -14,7 +14,7 @@ const Practices = () => {
     <div className='bg-primary px-6 text-white md:py-20 py-10'>
       <div className="flex flex-col items-center justify-center">
         <p className="md:text-heading text-3xl mb-3 font-bold text-center" data-aos="fade-right">Our Practice Areas</p>
-        <p className="text-center md:w-[431px]" data-aos="fade-left">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+        <p className="text-center md:w-[431px]" data-aos="fade-up">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
       </div>
       <div className='flex flex-wrap md:px-52 py-10 gap-10 justify-between px-6'>
         {

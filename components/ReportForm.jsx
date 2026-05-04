@@ -40,7 +40,7 @@ const ReportForm = () => {
                         <div className='step' data-aos="fade-right">
                             {i + 1 < activePage ? <TiTick size={20} /> : i + 1}
                         </div>
-                        <p className='text-textSecondary capitalize' data-aos="fade-left">{page}</p>
+                        <p className='text-textSecondary capitalize' data-aos="fade-up">{page}</p>
                     </div>
                 ))
             }

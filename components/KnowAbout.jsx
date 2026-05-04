@@ -22,7 +22,7 @@ const KnowAbout = () => {
           <button className='rounded-md py-3 px-6 w-fit bg-greener text-white text-[14px]'>Read About Us</button>
         </div>
       </div>
-      <div className="flex items-center overflow-hidden my-auto rounded-md h-full md:w-1/2" data-aos="fade-left"><img src="/new-images/shout.jpg" className='w-full' alt="" /></div>
+      <div className="flex items-center overflow-hidden my-auto rounded-md h-full md:w-1/2" data-aos="fade-up"><img src="/new-images/shout.jpg" className='w-full' alt="" /></div>
     </div>
   )
 }

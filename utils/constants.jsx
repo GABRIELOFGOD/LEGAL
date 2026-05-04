@@ -134,12 +134,12 @@ export const faqs = [
         answer: "Make report as we assure you safety through our safety mechanism. Your silence won't avenge or end your suffering."
     },
     {
-        title: 'How do I make a report',
-        answer: "Click on the 'MAKE REPORT' button above follow the prompt. Supply all necessary information accurately so we can help you better."
+        title: 'Are you a government agency or backed up by government?',
+        answer: "We are an NGO (a non-governmental organization) and we are not backed up by any government. We are funded by donations and grants."
     },
     {
-        title: 'How do I make a report',
-        answer: "Click on the 'MAKE REPORT' button above follow the prompt. Supply all necessary information accurately so we can help you better."
+        title: 'Why should I trust you with my information?',
+        answer: "We have a strict privacy policy and we do not share your information with any third party. We are here to help you and not to harm you."
     },
 ]
 

@@ -14,7 +14,7 @@ const PracticeCard = ({icon, title, text}) => {
             <span className='text-secondary my-auto text-4xl'>{icon}</span>
             <p className="text-primary font-bold my-auto">{title}</p>
         </div>
-        <p className="text-textSecondary" data-aos="fade-left">{text}</p>
+        <p className="text-textSecondary" data-aos="fade-up">{text}</p>
     </div>
   )
 }

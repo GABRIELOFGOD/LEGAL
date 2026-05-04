@@ -23,9 +23,19 @@ const bot = ({show, setShow}) => {
     // }
   // }, [])
 
+  // ================================ REMENBER MESSAGE BOX IS DISABLED ================================ //
+  // ================================ REMENBER MESSAGE BOX IS DISABLED ================================ //
+  // ================================ REMENBER MESSAGE BOX IS DISABLED ================================ //
+  // ================================ REMENBER MESSAGE BOX IS DISABLED ================================ //
+  // ================================ REMENBER MESSAGE BOX IS DISABLED ================================ //
+  // ================================ REMENBER MESSAGE BOX IS DISABLED ================================ //
+
   return (
     <div className='w-full flex flex-col relative bg-white h-[85%] rounded-t-[20px]'>
-
+      <div className='justify-center items-center flex h-full w-full absolute top-0 left-0 gap-3 bg-white bg-opacity-90 text-2xl flex-col font-semibold'>
+        <p>SAFEBOT IS UNDER MENTAINANCE!!!</p>
+        <p className='text-sm'>Please report manually or reachout to us through <a className='text-blue-500 underline' href="/contact">emergency contact</a></p>
+      </div>
       {/* =============== BOT HEADER ================ // */}
       <div className="shadow-md sticky w-full py-2 flex justify-between md:grid grid-cols-3 top-0">
         <div></div>
@@ -54,7 +64,7 @@ const bot = ({show, setShow}) => {
       {/* =============== BOT FOOTER ================= // */}
       <form onSubmit={e => botUserSubmitMsg(e)} className="flex w-full sticky justify-between bottom-0 shadow-inner">
         {imageUpload && <input type='file' />}
-        <input disabled={botInputDisabled} value={userBotMsg} onChange={e => setUserBotMsg(e.target.value)} placeholder={botPlace} className='w-full outline-none rounded-md h-12 pl-6 pr-12 md:text-sm text-xs border-secondary border-2' type="text" />
+        <input disabled={true} value={userBotMsg} onChange={e => setUserBotMsg(e.target.value)} placeholder={botPlace} className='w-full outline-none rounded-md h-12 pl-6 pr-12 md:text-sm text-xs border-secondary border-2' type="text" />
         <button disabled={userBotMsg.length < 1} className='h-10 top-1 absolute right-1 w-10 items-center justify-center flex text-2xl text-white rounded-md bg-green-500'><FiSend /></button>
       </form>
     </div>
