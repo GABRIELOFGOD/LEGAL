@@ -16,8 +16,8 @@ const KnowAbout = () => {
           <p className="text-sm uppercase font-bold">Know About us</p>
           <p className="md:text-second text-3xl md:leading-[60px] text-primary font-bold">We give voice to the voiceless and ensure their survival</p>
           <div className="flex flex-col gap-5">
-            <p className="text-textSecondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-            <p className="text-textSecondary">‍Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+            <p className="text-textSecondary">SafeLegal is an annex of SAFERNET built to help and aid victims of abuse and to give voice to the violence casualties of any type of abuse in any form anywhere and anytime.</p>
+            <p className="text-textSecondary">We are committed to providing comprehensive support and resources to those who have experienced abuse, ensuring their voices are heard and their rights are protected.</p>
           </div>
           <button className='rounded-md py-3 px-6 w-fit bg-greener text-white text-[14px]'>Read About Us</button>
         </div>
